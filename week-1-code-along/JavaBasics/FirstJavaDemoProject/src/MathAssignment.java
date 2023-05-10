@@ -11,7 +11,7 @@ public class MathAssignment {
 		inches=heightInInches%12;
 		
 		System.out.println("You are: "+feet+" foot "+inches+" inches tall");
-		
+		System.out.println("Completed");
 
 	}
 
