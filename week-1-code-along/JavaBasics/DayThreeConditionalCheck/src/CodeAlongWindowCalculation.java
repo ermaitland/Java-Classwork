@@ -12,6 +12,7 @@ The trim for the windows cost $2.25 per linear foot.
 public class CodeAlongWindowCalculation {
 
 	public static void main(String[] args) {
+		
 		int heightFeet, widthFeet, area, perimeter;
 		double totalCost;
 		Scanner scanner=new Scanner(System.in);
@@ -83,4 +84,3 @@ public class CodeAlongWindowCalculation {
     System.out.println("Total Cost =  " + cost);
 }
  */
-*/
