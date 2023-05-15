@@ -22,9 +22,8 @@ public class Type4Question {
 	public static int factorial(int number) {
 		int i;
 		int answer=number;
-		for(i=number-1;i>0;i--) {
+		for(i=number-1;i>0;i--)
 			answer *= i;
-		}
 		return answer;
 	}
 
