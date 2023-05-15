@@ -15,7 +15,7 @@ public class IterativeChoiceQuestion {
 		int i;
 		int answer=num;
 		for(i=1;i<num;i++) {
-			answer=answer+i;
+			answer+=i;
 			
 		}
 		System.out.println("The sum of "+num+" is "+answer);
