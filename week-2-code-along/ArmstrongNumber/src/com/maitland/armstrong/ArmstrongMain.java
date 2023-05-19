@@ -10,7 +10,7 @@ public class ArmstrongMain {
 		int number=scanner.nextInt();
 		ArmstrongNumber armstrongNumber=new ArmstrongNumber();
 		armstrongNumber.setNumber(number);
-		System.out.println("Is the number Armstrong? ... : "+armstrongNumber.isArmstrong());
+		System.out.println("The number is an Armstrong number... : "+armstrongNumber.isArmstrong());
 	}
 
 }
