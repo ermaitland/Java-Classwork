@@ -1,28 +1,11 @@
 package com.maitland.employee;
-/*Exercise: Create a class called employee with the following data members
-empName
-empId
-empAge
-empDesgn
-empLocation
-empExpInYrs
 
-All these data members should be initialized using constructors. Use constructor overloading and demonstrate by creating different employee objects with
-1.Employee  name alone -
-2. Employee name and id -
-3. Employee name, id and age -
-4. Employee name, id and designation -
-5. Employee name, id, age and designation -
-6. Employee name, id, age and location - 
-7. Employee name, id, age and experience -
-8. Employee name, id, designation and experience - 
-9. Employee name, id, designation, location and experience -
-10. Employee name, id, age, designation, location and experience
-*/
 public class Employee {
 private String empName, empDesgn, empLocation;
 private int empId, empAge, empExpInYears;
 
+
+//constructor same name as class, no return type; not even void, differenciated due to signature, doesn't need arguments.
 public Employee(String empName) {
 	this.empName=empName;
 }
@@ -88,4 +71,9 @@ public void showEmployee() {
 	System.out.println("Designation : "+empDesgn);
 	System.out.println("Years Experience : "+empExpInYears);
 }
+public Employee(int empId) {
+	this.empId = empId;
+}
+
+
 }
