@@ -4,6 +4,12 @@ public class PersonClass {
 private int personId;
 private String personName;
 
+
+public PersonClass(int personId, String personName) {
+	super();
+	this.personId = personId;
+	this.personName = personName;
+}
 public int getPersonId() {
 	return personId;
 }

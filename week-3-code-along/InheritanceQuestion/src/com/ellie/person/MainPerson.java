@@ -3,16 +3,13 @@ package com.ellie.person;
 public class MainPerson {
 
 	public static void main(String[] args) {
-		PersonClass person=new PersonClass();
-		person.inputPerson("Ellie",14235);
+		PersonClass person=new PersonClass(7182, "Eleanor");
 		person.displayPerson();
 		System.out.println("-------------------------");
-		Employee employee=new Employee();
-		employee.inputEmployeeData(30000, "Claire", "MSc", "Software", 34253);
+		Employee employee=new Employee(8172, "Claire", 30000, "Msc", "Software");
 		employee.displayEmployee();
 		System.out.println("-------------------------");
-		BuissnessMan buisness=new BuissnessMan();
-		buisness.inputBuisnesseData(10000000, "Susie", "Finance", 47194);
+		BuissnessMan buisness=new BuissnessMan(7182, "Susie", "Finance", 1000000);
 		buisness.displayBuissnessMan();
 
 	}

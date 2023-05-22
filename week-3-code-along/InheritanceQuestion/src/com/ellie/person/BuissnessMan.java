@@ -1,8 +1,17 @@
 package com.ellie.person;
 
 public class BuissnessMan extends PersonClass {
+	
 private String buisnessType;
 private int annualTurnover;
+	
+public BuissnessMan(int personId, String personName, String buisnessType, int annualTurnover) {
+		super(personId, personName);
+		this.buisnessType=buisnessType;
+		this.annualTurnover=annualTurnover;
+	}
+
+
 public String getBuisnessType() {
 	return buisnessType;
 }

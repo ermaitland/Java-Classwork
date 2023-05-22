@@ -1,8 +1,18 @@
 package com.ellie.person;
 
 public class Employee extends PersonClass {	
+	
 	private String designation, department;
 	private int salary;
+	
+	public Employee(int personId, String personName, int salary, String designation, String department) {
+		super(personId, personName);
+		this.salary=salary;
+		this.designation=designation;
+		this.department=department;
+	}
+
+	
 	public String getDesignation() {
 		return designation;
 	}
