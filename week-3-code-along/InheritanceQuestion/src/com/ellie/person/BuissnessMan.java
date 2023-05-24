@@ -31,8 +31,8 @@ public void inputBuisnesseData(int annualTurnover,String personName,String buisn
 	this.buisnessType=buisnessType;
 }
 
-public void displayBuissnessMan() {
-	displayPerson();
+@Override public void displayPerson() {
+	super.displayPerson();
 	System.out.println("Buissness : "+buisnessType);
 	System.out.println("Annual Turnover : "+annualTurnover);
 }

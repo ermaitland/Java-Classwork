@@ -38,8 +38,8 @@ public class Employee extends PersonClass {
 		this.department=department;
 	}
 	
-	public void displayEmployee() {
-		displayPerson();
+	@Override public void displayPerson() {
+		super.displayPerson();
 		System.out.println("Designation : "+designation);
 		System.out.println("Department : "+department);
 		System.out.println("Salary : "+salary);

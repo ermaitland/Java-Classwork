@@ -7,10 +7,10 @@ public class MainPerson {
 		person.displayPerson();
 		System.out.println("-------------------------");
 		Employee employee=new Employee(8172, "Claire", 30000, "Msc", "Software");
-		employee.displayEmployee();
+		employee.displayPerson();
 		System.out.println("-------------------------");
 		BuissnessMan buisness=new BuissnessMan(7182, "Susie", "Finance", 1000000);
-		buisness.displayBuissnessMan();
+		buisness.displayPerson();
 
 	}
 
