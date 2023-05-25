@@ -63,7 +63,11 @@ public class EmployeeUserInteracelmpl implements EmployeeUserInterface {
 		case 4:
 			System.out.println("Enter the ID of the employee you would like to seach for");
 			int idToFind=scanner.nextInt();
-			bussinessLogic.getSingleEmployee(idToFind);
+			if(bussinessLogic.getSingleEmployee(idToFind)==null)
+				System.out.println("Employee with ID : "+idToFind+" is not found");
+			else{
+				System.out.println(bussinessLogic.getSingleEmployee(idToFind));
+			};
 			break;
 		case 5: 
 			bussinessLogic.saveAllEmployees();

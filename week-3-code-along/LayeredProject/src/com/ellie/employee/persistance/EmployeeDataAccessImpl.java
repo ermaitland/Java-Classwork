@@ -33,7 +33,7 @@ public class EmployeeDataAccessImpl implements EmployeeDataAccess {
 
 	@Override
 	public LinkedList<Employee> readRecords() throws Exception{
-LinkedList<Employee> employees=new LinkedList<Employee>();
+		LinkedList<Employee> employees=new LinkedList<Employee>();
 		
 		FileReader fileReader = new FileReader("EmployeeData");
 

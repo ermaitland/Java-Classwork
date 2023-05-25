@@ -10,6 +10,6 @@ public interface EmployeeBussinessLogic {
 	boolean addEmployee(Employee employee);
 	boolean deleteEmployee(int id);
 	public void saveAllEmployees();
-	public void getSingleEmployee(int id);
+	public Employee getSingleEmployee(int id);
 	
 }

@@ -41,17 +41,15 @@ public class EmployeeBussienssLogicImpl implements EmployeeBussinessLogic {
 		return false;
 	}
 	
-	public void getSingleEmployee(int id) {
+	@Override
+	public Employee getSingleEmployee(int id) {
 		for(Employee employee:employeeList) {
 			if(id==employee.getEmpId()) {
-				System.out.println(employee);
-				return;
+				return employee;
 			}
 		}
-		System.out.println("No Employee with that ID");
+		return null;
 	}
-	
-	
 	
 	public void saveAllEmployees() {
 		try {
