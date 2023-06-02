@@ -1,0 +1,17 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+                http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<bean id="add" class="com.ellie.demo.Sum"></bean>
+
+<bean id="subtract" class="com.ellie.demo.Difference"></bean>
+
+<bean id="multiply" class="com.ellie.demo.Product"></bean>
+<!-- Constructor Dependency Injection: Injection values with constructor -->
+<bean id="sumCalc" class="com.ellie.training.Calculator1">
+<constructor-arg ref="add"></constructor-arg>
+</bean>
+</beans>

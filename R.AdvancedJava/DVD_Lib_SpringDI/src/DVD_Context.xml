@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+                http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 8)Add the beans into the xml file -->
+	<bean id="persistance" class="com.ellie.persistance.LibraryDataAccessImpl"></bean> <!-- peristance has no dependency AKA no Private -->
+	
+	<bean id="service" class="com.ellie.service.LibraryBusinessLogicImpl"><!-- Constructor injection -->
+		<constructor-arg ref="persistance"></constructor-arg>
+	</bean>
+		
+	<bean id="userInterface" class="com.ellie.ui.LibraryUserInterfaceImpl"><!-- Setter injection -->
+		<property name="businessLogic" ref="service"></property>
+	</bean>
+</beans>
