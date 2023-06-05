@@ -6,7 +6,7 @@
                 http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 <!-- 8)Add the beans into the xml file -->
-	<bean id="persistance" class="com.ellie.persistance.LibraryDataAccessImpl"></bean> <!-- peristance has no dependency AKA no Private -->
+	<bean id="persistance" class="com.ellie.persistance.LibraryDataAccessImpl"></bean> <!-- persistence has no dependency AKA no Private -->
 	
 	<bean id="service" class="com.ellie.service.LibraryBusinessLogicImpl"><!-- Constructor injection -->
 		<constructor-arg ref="persistance"></constructor-arg>
