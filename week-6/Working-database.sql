@@ -73,11 +73,11 @@ constraint foreign key(job_Id) references jobs(job_ID),
 constraint foreign key(department_Id) references department(department_Id));
 
 insert into employee
-values(101, "Ellie","Maitland","123@123.com","07888898888","2000-06-06","S01",35000.60,null,801,100),
-(102, "Roy","Kiln","123@678.com","07555555555","2020-09-06","HR02",35000.60,null,802,200),
-(103, "Sally","Troy","123@357.com","07222222222","2002-07-06","RD03",35000.60,null,803,300),
-(104, "May","Flinch","123@273.com","07666666666","2008-02-06","A04",35000.60,null,804,400),
-(105, "Sophie","Selty","123@941.com","07889966443","2001-12-06","R05",35000.60,null,805,500);
+values(110, "Byron","Bing","1111111@123.com","07888898888","2000-06-06","RD03",35000.60,null,801,300),
+(120, "Barry","Geller","22222@678.com","07555555555","2020-09-06","HR02",35000.60,null,802,200),
+(130, "Bill","Greene","33333@357.com","07222222222","2002-07-06","RD03",35000.60,null,803,300),
+(154, "Bob","Buffay","44444@273.com","07666666666","2008-02-06","A04",35000.60,null,804,400),
+(115, "Jack","Tribiani","5895452@941.com","07889966443","2001-12-06","R05",35000.60,null,805,500);
 
 create table job_history(
 employee_Id int NOT NULL,
@@ -121,6 +121,13 @@ from employee;
 alter table department
 drop constraint Fk_Manager_Id; -- didn't want it as a FK because it is then a cyclic relationship
 
+insert into employee
+values(176, "Louise","Fallon","fallon@gmail.com","07814898888","2022-06-06","HR02",5000.60,302.2,801,200);
+
+insert into employee
+values(201, "Louise","Taylor","taylor@gmail.com","07814890088","2021-06-06","HR02",10000.60,302.2,801,200),
+(554, "Louise","Matos","matos@gmail.com","07800898888","2020-06-06","S01",62000.60,302.2,801,100);
+
 select 
 employee_Id "Emp #", 
 last_name "Employee",
@@ -134,4 +141,69 @@ from employee;
 
 select
 concat(employee_Id,", ",first_name,", ",last_name,", ",email,", ",phone_number,", ",hire_date,", ",job_Id,", ",salary,", ",manager_id,", ",department_Id) "THE_OUTPUT"
+from employee;
+
+select * from employee
+WHERE salary > 12000;
+
+select * from employee 
+WHERE employee_Id = 176;
+
+select * from employee
+WHERE last_name = "Matos" or last_name = "Taylor";
+
+select last_name from employee
+WHERE department_Id = 200 or department_Id = 500;
+
+select 
+last_name "Employee",
+salary "Monthly Salary"
+from employee
+WHERE department_Id in(200,500) AND salary BETWEEN 5000 and 12000;
+
+select * from employee 
+WHERE hire_date like "1994-%";
+
+select * from employee
+WHERE manager_Id IS NULL;
+
+select
+concat(last_name,", ",salary,", ",commission_PCT) from employee
+WHERE commission_PCT IS NOT NULL;
+
+select count(*) from employee
+WHERE department_Id = 100;
+
+select max(salary)
+from employee;
+
+select min(salary)
+from employee
+where department_Id = 300;
+
+select department_Id, count(department_Id)
+from employee
+group by department_Id;
+
+select department_Id, max(salary), min(salary), sum(salary)
+from employee
+-- where department_Id != 100 (Can add more queries into the table)
+group by department_Id
+having max(salary)>20000;
+
+select max(salary) "Maximum", min(salary) "Minimum", sum(salary) "Sum", sum(salary)/count(salary) "Average"
+from employee;
+
+select department_Id, max(salary) "Maximum", min(salary) "Minimum", sum(salary) "Sum", sum(salary)/count(salary) "Average"
+from employee
+group by department_Id;
+
+select distinct job_Id, count(job_Id)
+from employee
+group by job_Id;
+
+select count(distinct manager_Id)
+from employee;
+
+select max(salary) - min(salary) "Difference"
 from employee;
