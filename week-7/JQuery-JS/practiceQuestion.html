@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice Question 1</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function factorial() {
+        var no1 = parseInt($('#number1').val());
+        let factorial = no1;
+        for (let i = no1 - 1; i > 0; i--) {
+          factorial *= i;
+        }
+        if (!factorial) {
+          factorial = 'Please enter something valid!!';
+        }
+        $('#result').text('Factorial : ' + factorial);
+      }
+
+      function palindrome() {
+        const no1 = $('#number1').val();
+        const reverseNo1 = no1.split('').reverse().join('');
+        let palindrome = false;
+        if (no1 === reverseNo1) {
+          palindrome = true;
+        }
+        $('#result').text('Palindrome : ' + palindrome);
+      }
+      $(document).ready(function () {
+        $('#factorial').click(factorial);
+        $('#palindrome').click(palindrome);
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Factorial and Palindrome</h1>
+    Enter Number : <input type="text" id="number1" /><br /><br />
+    <input type="button" value="Factorial" id="factorial" />
+    <input type="button" value="Palindrome" id="palindrome" /><br /><br />
+    <div id="result"></div>
+  </body>
+</html>

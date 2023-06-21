@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gym Members Database</title>
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
+    <link rel="stylesheet" href="/resources/demos/style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+      $(function () {
+        $('#tabs').tabs();
+      });
+      const BASE_URL = 'https://dummyjson.com';
+      $(document).ready(function () {
+        $('#displayAll').click(function () {
+          $.ajax({
+            url: `${BASE_URL}/users`,
+            type: 'GET',
+            success: function (data) {
+              $('#showAllMembers').html(displayAllMembers(data));
+            },
+            dataType: 'json'
+          });
+        });
+      });
+
+      $(document).ready(function () {
+        $('#search').click(function () {
+          $.ajax({
+            url: `${BASE_URL}/users/${$('#memberId').val()}`,
+            type: 'GET',
+            success: function (data) {
+              $('#showMember').html(displayMember(data));
+            },
+            dataType: 'json'
+          });
+        });
+      });
+
+      function displayAllMembers(data) {
+        var table =
+          '<table border="1"><tr><th>MemberID</th><th>First Name</th><th>Last Name</th><th>Age</th><th>Resident City</th><th>Phone Number</th></tr>';
+        for (let i = 0; i < 10; i++) {
+          table +=
+            '<tr><td>' +
+            data.users[i].id +
+            '</td><td>' +
+            data.users[i].firstName +
+            '</td><td>' +
+            data.users[i].lastName +
+            '</td><td>' +
+            data.users[i].age +
+            '</td><td>' +
+            data.users[i].address.city +
+            '</td><td>' +
+            data.users[i].phone +
+            '</td></tr>';
+        }
+        table += '</table>';
+        return table;
+      }
+
+      function displayMember(data) {
+        var table =
+          '<table border="1"><tr><th>MemberID</th><th>First Name</th><th>Last Name</th><th>Age</th><th>Resident City</th><th>Phone Number</th></tr>';
+        table +=
+          '<tr><td>' +
+          data.id +
+          '</td><td>' +
+          data.firstName +
+          '</td><td>' +
+          data.lastName +
+          '</td><td>' +
+          data.age +
+          '</td><td>' +
+          data.address.city +
+          '</td><td>' +
+          data.phone +
+          '</td></tr>';
+        table += '</table>';
+        return table;
+      }
+    </script>
+  </head>
+  <body>
+    <h1 style="text-align: center">Gym Database</h1>
+    <div id="tabs">
+      <ul>
+        <li><a href="#tab-1">Display All Members</a></li>
+        <li><a href="#tab-2">Search Member By ID</a></li>
+      </ul>
+      <div id="tab-1">
+        <a id="displayAll" href="#">Display All Members</a>
+        <div id="showAllMembers"></div>
+      </div>
+      <div id="tab-2">
+        <p>Enter Member ID Number <input type="text" id="memberId" /></p>
+        <br /><br />
+        <input type="button" value="Search Members Database" id="search" />
+        <div id="showMember"></div>
+      </div>
+    </div>
+  </body>
+</html>
