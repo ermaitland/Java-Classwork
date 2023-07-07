@@ -16,7 +16,7 @@
 			<th>Studio</th>
 			<th>User rating</th>
 		</tr>
-		<tr>
+		<tr th:each="DVD : ${dvdList}">
 			<td th:text="${DVD.dvd_ID}"></td>
 			<td th:text="${DVD.title}"></td>
 			<td th:text="${DVD.MPAA_rating}"></td>
@@ -26,7 +26,6 @@
 		<tr>
 	</table>
 	<br><br>
-	<a href="/">Back To Main Page</a><br><br>
-	<a href="./inputIdPage">Search for Another DVD</a>
+	<a href="/">GoTo Main Page</a>
 </body>
 </html>
