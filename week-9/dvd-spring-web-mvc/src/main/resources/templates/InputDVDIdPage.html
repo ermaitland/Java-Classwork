@@ -3,15 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert ID Page</title>
+<style>
+*{
+background: #008080;
+}
+h1{
+text-align:center;
+color: pink;
+font-size:45px;
+}
+div{
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+a{
+text-align: center;
+color: lightpink;
+text-decoration: none;
+padding: 10px;
+}
+form{
+color:lightpink;
+}
+</style>
 </head>
 <body>
 	<h1>DVD Library</h1>
 	<hr>
+	<div>
 	<form action="./searchDVDById">
 		Enter DVD title :<input type="text" name="title"><br><br>
 		<input type="submit" value="Search DVD">
-	</form>
+	</form></div>
 	<br><br>
-	<a href="/">Back To Main Page</a>
+	<div><a href="/">Back To Main Page</a></div>
 </body>
 </html>

@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ellie.entity.DVD;
@@ -29,15 +30,15 @@ public class DVDController {
 	}
 	
 	@RequestMapping("/searchDVDById")
-	public ModelAndView searchController(HttpServletRequest request) {
+	public ModelAndView searchController(@RequestParam("title") String title) {
 		ModelAndView modelAndView=new ModelAndView();
-		DVD dvd=dvdService.getDVDById(request.getParameter("title"));
+		DVD dvd=dvdService.getDVDById(title);
 		if(dvd!=null) {
 			modelAndView.addObject("DVD", dvd);
 			modelAndView.setViewName("ShowDVD");
 		}
 		else {
-			modelAndView.addObject("message", "DVD with ID "+request.getParameter("DVDId")+" does not exist");
+			modelAndView.addObject("message", "DVD with ID "+title+" does not exist");
 			modelAndView.setViewName("Output");
 			
 		}
@@ -88,13 +89,13 @@ public class DVDController {
 	}
 
 	@RequestMapping("/deleteDVD")
-	public ModelAndView deleteDVDController(HttpServletRequest request) {
+	public ModelAndView deleteDVDController(@RequestParam("title") String title) {
 		ModelAndView modelAndView = new ModelAndView();
 		String message = null;
-		if (dvdService.deleteDVDById(request.getParameter("title"))) {
-			message = "DVD with title " + request.getParameter("title") + " deleted !";
+		if (dvdService.deleteDVDById(title)) {
+			message = "DVD with title " + title + " deleted !";
 		} else {
-			message = "DVD with title " + request.getParameter("title") + " not deleted !";
+			message = "DVD with title " + title + " not deleted !";
 		}
 		modelAndView.addObject("message", message);
 		modelAndView.setViewName("Output");
@@ -109,15 +110,13 @@ public class DVDController {
 	
 	
 	@RequestMapping("/updateDVDrating")
-	public ModelAndView updateDVDratingController(HttpServletRequest request) {
+	public ModelAndView updateDVDratingController(@RequestParam("dvdId") int dvdId,@RequestParam("rating") int rating) {
 		
 		String message=null;
-		int dvdId=Integer.parseInt(request.getParameter("dvdId"));
-		int rating=Integer.parseInt(request.getParameter("rating"));
 		if(dvdService.incrementRating(dvdId, rating))
-			message="Rating changed for DVD with ID "+request.getParameter("dvdId");
+			message="Rating changed for DVD with ID "+dvdId;
 		else
-			message="Rating not changed for DVD with ID "+request.getParameter("dvdId");
+			message="Rating not changed for DVD with ID "+dvdId;
 		
 		return new ModelAndView("Output", "message", message);
 	}

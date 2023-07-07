@@ -3,10 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <title>DVD Library</title>
+<style>
+*{
+background: #008080;
+}
+ h1{
+text-align:center;
+color: pink;
+font-size:45px;
+}
+div{
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+a{
+text-align: center;
+color: lightpink;
+text-decoration: none;
+padding: 10px;
+} 
+</style>
 </head>
 <body>
 <h1>DVD Library</h1>
 <hr>
+<div>
 <a href="./inputIdPage">Search for a DVD by title</a>
 <br>
 <a href="./showAllDVDs">Show All DVDs</a>
@@ -16,5 +38,6 @@
 <a href="./InputDvdIdForDelete">Delete DVD</a>
 <br>
 <a href="./InputDvdIdForUpdate">Update rating of a DVD</a>
+</div>
 </body>
 </html>

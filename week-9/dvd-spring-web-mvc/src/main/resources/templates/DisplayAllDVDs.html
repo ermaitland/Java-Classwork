@@ -3,10 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+*{
+background: #008080;
+}
+h1{
+text-align:center;
+color: pink;
+}
+div{
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+a{
+text-align: center;
+color: lightpink;
+text-decoration: none;
+padding: 10px;
+}
+</style>
 </head>
 <body>
 	<h1>DVD Library</h1>
 	<hr>
+	<div>
 	<table border="1">
 		<tr>
 			<th>DVD ID</th>
@@ -25,7 +46,10 @@
 			<td th:text="${DVD.user_rating}"></td>
 		<tr>
 	</table>
+	</div>
 	<br><br>
+	<div>
 	<a href="/">GoTo Main Page</a>
+	</div>
 </body>
 </html>
