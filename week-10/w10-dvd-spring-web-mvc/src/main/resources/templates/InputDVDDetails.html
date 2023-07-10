@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+*{
+background: #008080;
+}
+h1{
+text-align:center;
+color: pink;
+font-size:45px;
+}
+div{
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+a{
+text-align: center;
+color: lightpink;
+text-decoration: none;
+padding: 10px;
+}
+form{
+color:lightpink;
+}
+</style>
+</head>
+<body>
+	<h1>DVD Library</h1>
+	<hr>
+	<div>
+	<form action="./saveDVD" method="post">
+	Enter DVD Id : <input type="text" name="dvd_ID"><br><br>
+	Enter Title : <input type="text" name="title"><br><br>
+	Enter MPAA rating : <input type="text" name="MPAA_rating"><br><br>
+	Enter Directors Name : <input type="text" name="director_name"><br><br>
+	Enter Studio : <input type="text" name="studio"><br><br>
+	Enter User rating : <input type="text" name="user_rating"><br><br>
+	<input type="submit" value="Save DVD">
+	</form></div>
+	<br><br>
+	<div>
+	<a href="/">GoTo Main Page</a></div>
+</body>
+</html>

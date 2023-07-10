@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+*{
+background: #008080;
+}
+h1{
+text-align:center;
+color: pink;
+font-size:45px;
+}
+div{
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+form{
+color:lightpink;
+}
+</style>
+</head>
+<body>
+	<h1>DVD Library</h1>
+	<hr>
+	<div>
+	<form action="./updateDVDrating">
+		Enter DVD ID : <input type="text" name="dvdId"><br><br>
+		Enter rating : <input type="text" name="rating"><br><br>
+		<input type="submit" value="Increment Rating">
+	</form>
+	</div>
+</body>
+</html>
