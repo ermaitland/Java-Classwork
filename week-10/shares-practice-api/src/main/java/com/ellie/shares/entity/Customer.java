@@ -1,4 +1,4 @@
-package com.ellie.entity;
+package com.ellie.shares.entity;
 
 import java.util.List;
 

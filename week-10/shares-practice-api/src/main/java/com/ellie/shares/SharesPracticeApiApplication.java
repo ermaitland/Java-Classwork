@@ -15,3 +15,11 @@ public class SharesPracticeApiApplication {
 	}
 
 }
+
+
+
+//Create the web Application Customer Share Management 
+//using Spring Boot MVC and Thymeleaf  which will accept 
+//the customer id from the user and display the following 
+//details to the user : customerId, shareName, quantity,
+//unitPrice, totalValuation, shareType.
